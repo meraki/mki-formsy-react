@@ -49,7 +49,7 @@ Complete API reference is available [here](/API.md).
 ```jsx
   import Formsy from 'formsy-react';
 
-  const MyAppForm = React.createClass({
+  const MyAppForm = createReactClass({
     getInitialState() {
       return {
         canSubmit: false
@@ -85,7 +85,7 @@ This code results in a form with a submit button that will run the `submit` meth
 ```jsx
   import Formsy from 'formsy-react';
 
-  const MyOwnInput = React.createClass({
+  const MyOwnInput = createReactClass({
 
     // Add the Formsy Mixin
     mixins: [Formsy.Mixin],
@@ -133,4 +133,6 @@ The form element component is what gives the form validation functionality to wh
 
 ## License
 
-[MIT](/LICENSE)
+[The MIT License (MIT)](/LICENSE)
+
+Copyright (c) 2014-2016 PatientSky A/S
