@@ -71,6 +71,7 @@ Formsy.Form = createReactClass({
   },
 
   componentDidMount: function () {
+    this._isMounted = true;
     this.validateForm();
   },
 
@@ -91,6 +92,10 @@ Formsy.Form = createReactClass({
       this.validateForm();
     }
 
+  },
+
+  componentWillUnmount: function() {
+    this._isMounted = false;
   },
 
   // Allow resetting to specified data
@@ -394,7 +399,7 @@ Formsy.Form = createReactClass({
 
     // If there are no inputs, set state where form is ready to trigger
     // change event. New inputs might be added later
-    if (!this.inputs.length && this.isMounted()) {
+    if (!this.inputs.length && this._isMounted) {
       this.setState({
         canChange: true
       });
